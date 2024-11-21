@@ -20,14 +20,17 @@ def add_expenses(amount, description):
 
     expenses = read_expenses()
 
+    if expenses is None:
+        expenses = []
+
     if len(expenses) == 0:
-        expenses_id = 1
+        expense_id = 1
     else:
-        expenses_id = expenses_id[-1]["id"] + 1
+        expense_id = expenses[-1]["id"] + 1
 
     expenses.append(
         {
-            "id": expenses_id,
+            "id": expense_id,
             "date": datetime.now().isoformat(),
             "description": description,
             "amount": amount,
