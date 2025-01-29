@@ -1,24 +1,34 @@
 from datetime import datetime
 from utils import read_expenses, get_month_text
+from rich import print
 
 
 def summary(month=None):
+    # Read expenses and handle empty case
     expenses = read_expenses()
     if not expenses:
         print("[bold red]No expenses found.[/bold red]")
         return
 
-    month = ""
-
+    # Filter expenses by month if specified
     if month:
-        expenses = [
-            expenses
+        filtered_expenses = [
+            expense
             for expense in expenses
             if datetime.fromisoformat(expense["date"]).month == month
         ]
-        month_text = f"for {get_month_text}"
+        if not filtered_expenses:
+            print(f"[yellow]No expenses found for {get_month_text(month)}[/yellow]")
+            return
 
-    total_amount = sum(expenses["amount"] for expense in expenses)
+        month_text = f"for {get_month_text(month)}"
+        total_amount = sum(expense["amount"] for expense in filtered_expenses)
+    else:
+        total_amount = sum(expense["amount"] for expense in expenses)
+        month_text = ""
 
-    print(f"The totat amount is {total_amount}")
-
+    # Format and print the total with currency
+    formatted_total = f"${total_amount:,.2f}"
+    print(
+        f"[green]The total amount{' ' + month_text if month_text else ''} is {formatted_total}[/green]"
+    )

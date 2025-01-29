@@ -4,7 +4,6 @@ import json
 
 expenses_file = "expenses.json"
 
-
 def read_expenses():
     if not os.path.exists(expenses_file):
         return []
@@ -17,7 +16,7 @@ def read_expenses():
 
 def write_expenses(expenses):
     with open(expenses_file, "w") as file:
-        json.dumps(expenses, file, indent=2)
+        json.dump(expenses, file, indent=2)
 
 
 def get_month_text(month):
