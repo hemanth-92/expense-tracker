@@ -2,7 +2,7 @@ import os
 import json
 
 
-expenses_file = os.path.join(os.path.dirname(__file__), "..", "..", "expenses.json")
+expenses_file =  "expenses.json"
 
 def read_expenses():
     if not os.path.exists(expenses_file):
@@ -23,8 +23,16 @@ def read_expenses():
 
 
 def write_expenses(expenses):
-    with open(expenses_file, "w") as file:
-        json.dump(expenses, file, indent=2)
+    try:
+        with open(expenses_file, "w") as file:
+            json.dump(expenses, file, indent=2)
+    except IOError as e:
+        print(f"Error: Failed to write expenses to file: {e}")
+        print(f"Make sure you have write permissions to: {expenses_file}")
+        exit(1)
+    except Exception as e:
+        print(f"Error: An unexpected error occurred while writing expenses: {e}")
+        exit(1)
 
 
 def get_month_text(month):
