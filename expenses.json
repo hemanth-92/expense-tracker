@@ -10,5 +10,11 @@
     "date": "2025-01-24",
     "description": "Rent",
     "amount": 1000.0
+  },
+  {
+    "id": 4,
+    "date": "2025-02-22T17:10:50.742409",
+    "description": "icecream",
+    "amount": 40.0
   }
 ]

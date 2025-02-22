@@ -13,5 +13,6 @@ __pycache__/
 .env
 .envrc
 
-flake.nix
-flake.lock
+*.lock
+*.nix
+.vscode/
