@@ -18,7 +18,7 @@ def expenses_summary(month=None):
         ]
         if not filtered_expenses:
             print(f"[yellow]No expenses found for {get_month_text(month)}[/yellow]")
-            return
+            return False
 
         month_text = f"for {get_month_text(month)}"
         total_amount = sum(expense["amount"] for expense in filtered_expenses)
@@ -30,3 +30,4 @@ def expenses_summary(month=None):
     print(
         f"[green]The total amount{' ' + month_text if month_text else ''} is {formatted_total}[/green]"
     )
+    return True

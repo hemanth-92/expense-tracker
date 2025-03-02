@@ -1,17 +1,5 @@
 [
   {
-    "id": 2,
-    "date": "2025-01-24",
-    "description": "Rent",
-    "amount": 1000.0
-  },
-  {
-    "id": 4,
-    "date": "2025-02-22T17:10:50.742409",
-    "description": "icecream",
-    "amount": 40.0
-  },
-  {
     "id": 5,
     "date": "2025-02-22T17:42:14.106570",
     "description": "choco",
@@ -42,9 +30,9 @@
     "amount": 1000.0
   },
   {
-    "id": 10,
-    "date": "2025-02-22T17:48:20.354104",
-    "description": "hair oil",
-    "amount": 1000.0
+    "id": 11,
+    "date": "2025-03-02T20:57:58.636699",
+    "description": "Zepto",
+    "amount": 100.0
   }
 ]

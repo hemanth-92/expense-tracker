@@ -4,6 +4,9 @@ from datetime import datetime
 
 
 def add_expenses(description, amount):
+    if description is None or description.strip() == "":
+        print("[red]Error: Description cannot be empty[/red]")
+        return False
     try:
         amount = float(amount)
         if amount <= 0:
@@ -28,4 +31,5 @@ def add_expenses(description, amount):
         
     write_expenses(expenses)
     print(f"Expense [bold green]added[/bold green] successfully (ID: {expense_id})")
+    return True
         

@@ -1,7 +1,6 @@
 import os
 import json
 
-
 expenses_file =  "expenses.json"
 
 def read_expenses():
