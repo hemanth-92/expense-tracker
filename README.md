@@ -2,7 +2,7 @@
 
 1. Run the CLI
    ```sh
-   python3 expense-tracker.py.py -h # Show help
+   python3 expense-tracker.py -h # Show help
    python3 expense-tracker.py add --description "Lunch" --amount 20 # Add an expense
    python3 expense-tracker.py add --description "Dinner" --amount 10 # Add another expense
    python3 expense-tracker.py list # List all expenses
